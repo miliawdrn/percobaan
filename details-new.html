@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+
+    <link rel="stylesheet" href="css/new.css">
+
+    <title>Report Detail</title>
+  </head>
+  <body>
+        <!--Navbar-->
+        <div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <!--logo-->
+                <a class="navbar-brand" href="#">
+                    <img src="images/company-logo.png">
+                </a>
+
+                <!--
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>-->
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto navbar-right-top">
+                        <!--search-->
+                        <li class="nav-item">
+                            <div id="custom-search" class="top-search-bar">
+                                <input class="form-control" type="text" placeholder="Search..">
+                            </div>
+                        </li>
+
+                        <!--Dashboar Tab-->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="dashboard-tab" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  
+                                Dashboard
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="dashboard-tab">
+                                <a class="dropdown-item" href="report-list.html">Report List</a>
+                                <a class="dropdown-item" href="archive.html">Archive</a>
+                            </div>
+                        </li>
+
+                        <!--Analytics Tab-->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="analytics-tab" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  
+                                Analytics
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="analytics-tab">
+                                <a class="dropdown-item" href="monthly-statistics.html">Monthly Statistic</a>
+                                <a class="dropdown-item" href="yearly-statistics.html">Yearly Statistic</a>
+                                <a class="dropdown-item" href="statistics-by-category.html">Statistic by Category</a>
+                                <a class="dropdown-item" href="statistics-by-priority.html">Statistic by Priority</a>
+                                <a class="dropdown-item" href="statistics-by-gender.html">Statistic by Gender</a>
+                                <a class="dropdown-item" href="typesof-support-users.html">Types of Support User</a>
+                                <a class="dropdown-item" href="methodsof-support-users.html">Methods of Support User</a>
+                                <a class="dropdown-item" href="anonimity-reports.html">Anonimity Reports</a>
+                                <a class="dropdown-item" href="user-ip-address.html">User IP Address</a>
+                            </div>
+                        </li>
+
+                        <!--Institution Wellbeing Tab-->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="wellbeing-tab" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  
+                                Institution Wellbeing
+                            </a>
+                            <!--
+                            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="wellbeing-tab">
+                                <a class="dropdown-item" href="#">Report List</a>
+                                <a class="dropdown-item" href="#">Archive</a>
+                            </div>
+                            -->
+                        </li>
+
+                        <!--Notification Tab-->
+                        <li class="nav-item dropdown notification">
+                            <a class="nav-link nav-icons" href="#" id="notification-tab" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-fw fa-bell"></i>
+                                    <span class="indicator"></span>
+                            </a>
+                        </li>
+
+                        <!--Users Tab-->
+                        <li class="nav-item dropdown nav-user">
+                            <a class="nav-link nav-user-img" href="#" id="user-tab" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">    
+                                <img src="images/avatar-2.jpg" class="user-avatar-md rounded-circle">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="user-tab">
+                                <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
+                                <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Setting</a>
+                                <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!--Report List Detail-->
+        <div class="dashboard-wrapper">
+            <div class="container-fluid dashboard-content ">
+                <!--Report List Detail Title-->
+                <div class="card">
+                    <div class="card-header">
+                        <h4 id="">Report Details</h4>
+                        <h6 id="">18 Oct 2021 17:00 WIB</h6>
+                    </div>
+
+                    <!--Button set priority-->
+                    <div class="card-header">
+                        <div class="btn-group">
+                            <form name="" id="" action="">
+                                <select class="form-control priority selectFilter" data-tagert="">
+                                    <option value="" selected="selected">--Set Priority--</option>
+                                    <option data-ref="">High</option>
+                                    <option data-ref="">Moderate</option>
+                                    <option data-ref="">Low</option>
+                                </select>
+                            </form>
+                        </div>
+
+                        <!--Button Assign To-->
+                        <div class="btn-group">
+                            <form name="" id="" action="">
+                                <select class="form-control priority selectFilter" data-tagert="">
+                                    <option value="" selected="selected">--Assign To--</option>
+                                    <option data-ref="">Administrator</option>
+                                    <option data-ref="">Manager 1</option>
+                                    <option data-ref="">Manager 2</option>
+                                    <option data-ref="">Manager 3</option>
+                                    <option data-ref="">Manager 4</option>
+                                    <option data-ref="">Manager 5</option>
+                                </select>
+                            </form>
+                        </div>
+
+                        <!--Button Status-->
+                        <div class="btn-group">
+                            <form name="" id="" action="">
+                                <select class="form-control priority selectFilter" data-tagert="">
+                                    <option value="" selected="selected">--Status--</option>
+                                    <option data-ref="">New</option>
+                                    <option data-ref="">On Progress</option>
+                                    <option data-ref="">Opened</option>
+                                    <option data-ref="">Resolve</option>
+                                </select>
+                            </form>
+                        </div>
+
+                        <!--Back to report list-->
+                        <div class="btn-group">
+                            <form action="">
+                                <button class="btn" type="submit">
+                                    <i class="fas fa-arrow-circle-left"></i>
+                                    <span>Back to Report List</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-body">
+                        <div class="row">
+                            <!--Report Detail Konten-->
+                            <div class="col-sm-6">
+                              <div class="card">
+                                    <div class="card-header red-header">
+                                      Report Details
+                                    </div>
+                                    <div class="card-body">
+                                        <img src="images/report-list.png">
+                                    </div>
+                              </div>
+                            </div>
+
+                            <!--Discussions-->
+                            <div class="col-sm-6">
+                              <div class="card">
+                                    <div class="card-header red-header">
+                                        Discussions
+                                    </div>
+                                    <div class="card-body">
+                                        <!--Untuk report details-->
+                                        <img src="images/discussions1.png">
+                                        <img src="images/discussions2.png">
+                                    </div>
+                                    <div class="card-body">
+                                        <form action="">
+                                            <a class="btn btn-call" role="button" href="">
+                                                <i class="fas fa-phone"></i>
+                                            </a>
+                                        </form>
+                                    </div>
+                              </div>
+                            </div>
+                      </div>
+
+                    </div>
+                </div>
+
+                <!--Action-->
+                <div class="card-body">
+                    <div class="row">
+                        <!--Inform To-->
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="col-auto">
+                                        <label class="sr-only" for=""></label>
+                                        <div class="input-group mb-2">
+                                            <div class="input-group-prepend">
+                                            <div class="input-group-text">Inform To :</div>
+                                            </div>
+                                            <input type="text" class="form-control" id="" placeholder="bullyid@bullyid.com">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Saved-->
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="col-auto">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="saved-check" value="">
+                                            <label class="form-check-label" for="saved-check">Problem Solved
+                                                <button type="submit" class="btn mb-2">Saved</button>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                  </div>
+
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <!--footer-->
+        <div class="footer bg-white">
+            <div class="container-fluid sticky-bottom">
+                    <p>© 2021 Bullyid Indonesia. We're a registered charity in Indonesia (No. 0377350102014)</p>
+            </div>
+        </div>
+
+        <!--Graphics-->
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+
+        <!--chart-->
+        <script src="js/chart/dist/chart.js"></script>
+        <script src="js/chart-configuration.js"></script>
+</body>
+</html>

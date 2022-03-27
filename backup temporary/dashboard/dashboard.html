@@ -1,0 +1,213 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="items item-w2">
+           <div class="row">
+           <div class="col-xs-12">
+                <h4 class="option-title text-green text-uppercase">Welcome back, {$company_userfullname}</h4>
+           </div>
+        
+           <div class="clearfix"></div>
+       </div>
+       <!-- /.row -->
+       </div>
+        <!-- /.items item-w2 -->
+    </div>
+</div>
+
+
+
+
+<div class="row">
+
+<div class="col-md-3 col-xs-6">
+<a href="{$fulldomain}/dashboard/report">
+<div class="panel panel-primary e-squared">
+    <div class="panel-body">
+        <center>
+        <h3>{$jmlreport}</h3>
+        Total Report
+        </center>
+    </div>
+</div>
+</a>
+</div>
+<div class="col-md-3 col-xs-6">
+ <a href="{$fulldomain}/dashboard/report/solved">
+ <div class="panel panel-primary e-squared">
+    <div class="panel-body">
+        <center>
+        <h3>{$jmlreportsolved}</h3>
+        Report Solved
+        </center>
+    </div>
+</div>
+</a>
+</div>
+<div class="col-md-3 col-xs-6">
+ <a href="{$fulldomain}/dashboard/response">
+ <div class="panel panel-primary e-squared">
+    <div class="panel-body">
+        <center>
+        <h3>{$jmlresponse}</h3>
+        Total Responses
+        </center>
+    </div>
+</div>
+</a>
+</div>
+<div class="col-md-3 col-xs-6">
+ <a href="{$fulldomain}/dashboard/users">
+ <div class="panel panel-primary e-squared">
+    <div class="panel-body">
+        <center>
+        <h3>{$jmluser}</h3>
+        Users 
+        </center>
+    </div>
+</div>
+</a>
+</div>
+
+<div class="col-md-6 col-xs-12">
+        <div class="panel panel-default e-squared">
+            <div class="panel-heading">Monthly Report Statistic</div>
+            <div class="panel-body">
+                <script src="{$fulldomain}/librari/hchart/code/highcharts.js"></script>
+                <script src="{$fulldomain}/librari/hchart/code/modules/exporting.js"></script>
+                <script src="{$fulldomain}/librari/hchart/code/modules/export-data.js"></script>
+
+                    <div id="container" style="width: 100%; height:570px; margin: 0 auto"></div>
+                                <script type="text/javascript">
+
+                                $(document).ready(function() {                                                    
+                                    
+                                    Highcharts.chart('container', {
+                        
+                                        chart: {
+                                            plotBackgroundColor: null,
+                                            plotBorderWidth: null,
+                                            plotShadow: false,
+                                             type: 'column'
+                                        },
+                                        title: {
+                                            text: 'Report Abuse Statistic for {$company_userfullname}'
+                                        },
+                                    
+                                        subtitle: {
+                                            text: 'Period {$bulan}, Base on Report Time'
+                                        },
+                                    
+                                        yAxis: {
+                                            title: {
+                                                text: 'Number of Reports'
+                                            }
+                                        },
+                                      
+                                        xAxis: {
+                                            title: {
+                                                text: 'Date'
+                                            },
+                                            categories: [{foreach from=$dataharian key=id item=a}'{$a.nama}',{/foreach}],
+                                            crosshair: true,
+                                            labels: {
+                                                enabled: true
+                                            }
+                                        },
+
+                                        tooltip: {
+                                            formatter: function () {
+                                                return '<b>' + this.series.name +
+                                                    '</b> : <b>' + this.y + '</b>';
+                                            }
+                                        },
+                                        
+                                        
+                                        legend: {
+                                            layout: 'vertical',
+                                            align: 'right',
+                                            verticalAlign: 'middle'
+                                        },
+                                        
+                                        series: [{
+                                            name: 'Report',
+                                            data: [{foreach from=$dataharian key=id item=a}{$a.jumlah},{/foreach}]
+
+                                          }],
+
+                                        colors: ['#ad171f'],
+                                    
+                                        responsive: {
+                                            rules: [{
+                                                condition: {
+                                                    maxWidth: 1200
+                                                },
+                                                chartOptions: {
+                                                    legend: {
+                                                        layout: 'horizontal',
+                                                        align: 'center',
+                                                        verticalAlign: 'bottom'
+                                                    }
+                                                }
+                                            }]
+                                        }
+                                    
+                                    }); 
+                        
+                                    
+                                
+                                });
+                                
+                                
+                                
+                                </script>
+
+            
+            </div>
+        </div>
+    </div>
+
+
+     <div class="col-md-6 col-xs-12">
+        <div class="panel panel-default e-squared">
+            <div class="panel-heading">Last Reports</div>
+            <div class="panel-body">
+
+                {if !$datadetail}
+                    <div class="alert {if $berhasil eq '1'}  alert-success {else} alert-default{/if} alert-dismissible" role="alert">
+                    <center>
+                    <br  clear="all"/><br  clear="all"/><br  clear="all"/><br  clear="all"/>No Report Abuse Data Right now<br  clear="all"/><br  clear="all"/><br  clear="all"/><br  clear="all"/>
+                    </center>
+                   </div>
+                    <div class="clearfix"></div>
+                {else}
+                <table class="table">
+                    <tr>
+                        <th>No.</th>
+                        <th>Report Date</th>
+                        <th>Name</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                {foreach from=$datadetail key=id item=i name=list}
+                
+                    <tr>
+                        <td>{$i.no}</td>
+                        <td>{$i.date}</td>
+                        <td>{$i.user.userfullname}</td>
+                        <td>{$i.status}</td>
+                        <td><a href="{$i.link}" class="btn btn-default pull-left"> Details </a></td>
+                    </tr>
+    
+                   
+                {/foreach}
+                </table>
+            {/if}
+</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
